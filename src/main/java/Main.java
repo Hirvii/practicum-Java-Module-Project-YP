@@ -7,7 +7,7 @@ public class Main {
 
         Calulator calculator = new Calulator();
 
-        System.out.println("Введите название товара (или команду \"Завершить\", если все товары добавлены)");
+        System.out.println("Введите название товара (или команду \"Завершить\", чтобы завершить работу приложения)");
 
         while(true) {
 
@@ -20,11 +20,11 @@ public class Main {
                 if (itemName.equalsIgnoreCase("завершить")) {
                     break;
                 } else if(itemName.equals("")) {
-                    System.out.println("Название товара не может быть пустым!");
+                    System.out.println("Название товара не может быть пустым! Введите название товара еще раз: ");
                 } else {
                     calculator.addItemName(itemName + "\n");
 
-                    System.out.println("Введите стоимость товара");
+                    System.out.println("Введите стоимость товара в формате рубли.копейки");
 
                     while (true) {
                         if (scanner.hasNextDouble()) {
@@ -38,7 +38,7 @@ public class Main {
                                 System.out.println(getRuble(calculator.itemsCosts) + "\n");
                                 break;
                             } else {
-                                System.out.println("Стоимость не может быть отрицательной! Повторите ввод:");
+                                System.out.println("Стоимость не может быть отрицательной! Введите стоимость еще раз:");
                             }
                         } else {
                             System.out.println("Вы ввели не число!");
@@ -71,12 +71,12 @@ public class Main {
                     System.out.println("Нет необходимоти делить счёт. Вы можете добавить товары, чтобы посчитать их общую сумму.");
                     return count;
                 } else if (count < 1) {
-                    System.out.println("Число гостей должно быть больше 1! Повторите ввод:");
+                    System.out.println("Число гостей должно быть больше 1! Введите число гостей ещё раз: ");
                 } else {
                     return count;
                 }
             } else {
-                System.out.println("Вы ввели некорректное число гостей! Повторите ввод: ");
+                System.out.println("Вы ввели некорректное число гостей! Введите число гостей ещё раз: ");
                 scanner.next();
             }
         }
