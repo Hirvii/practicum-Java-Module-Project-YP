@@ -4,6 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scannerGuests = new Scanner(System.in);
         int guestCount = countGuests(scannerGuests);
+
         Calulator calculator = new Calulator();
 
         System.out.println("Введите название товара (или команду \"Завершить\", если все товары добавлены)");
@@ -27,7 +28,6 @@ public class Main {
 
                     while (true) {
                         if (scanner.hasNextDouble()) {
-
                             double itemCost = scanner.nextDouble();
 
                             if (itemCost > 0) {
@@ -83,6 +83,7 @@ public class Main {
     }
     public static String getRuble(double cost) {
         int costInt = (int)cost;
+
         if ((costInt == 1) || (costInt % 10 == 1)) {
             return "рубль";
         } else if((costInt >= 2 && costInt <=4) || (costInt % 10 >= 2 && costInt % 10 <= 4)) {
